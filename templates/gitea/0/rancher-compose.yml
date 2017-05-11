@@ -1,0 +1,42 @@
+.catalog:
+  name: "Gitea"
+  version: "v1.1.0"
+  description: "A painless self-hosted Git service"
+  uuid: gitea-0
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: gitea_version
+      description: "Gitea Server version"
+      label: "Gitea Version"
+      required: true
+      default: "1.1.0"
+      type: "enum"
+      options:
+        - '1.1.1'
+        - '1.1.0'
+    - variable: public_port
+      description: "public port to access the mysql server"
+      label: "Public Port"
+      required: true
+      default: "3306"
+      type: "int"
+    - variable: http_port
+      description: "http port to access gitea webui"
+      label: "Http Port"
+      required: true
+      default: "10080" 
+      type: "int"
+    - variable: ssh_port
+      description: "ssh port to access gitea cli"
+      label: "SSH Port"
+      required: true
+      default: "222"
+      type: "int"
+    - variable: mysql_password
+      description: "mysql root password"
+      label: "Mysql Password"
+      required: true
+      default: ""
+      type: "password"
+
+gitea:
